@@ -1,7 +1,11 @@
 // RONDA
-
-let jugador = Math.floor(Math.random() * 2) + 1;
 var puntos=[];
+puntos[1]=0;
+puntos[2]=0;
+while(puntos[1]!=50 && puntos[2]!=50){
+let jugador = Math.floor(Math.random() * 2) + 1;
+anadirPuntos(jugador);
+}
 
 // Inicializo puntuación de los jugadores para probar la función
 
@@ -27,7 +31,7 @@ function anadirPuntos(jugador){
         console.log('El jugador',jugador, 'tiene',puntos[jugador],'puntos', 'y el', jugador_otro,'tiene',puntos[jugador_otro]);
     } else if(puntos[jugador] === 30){
         puntos[jugador]=40;
-        if(puntos[otro_jugador]===40){
+        if(puntos[jugador_otro]===40){
             console.log('Deuce');
         } else console.log('El jugador',jugador, 'tiene',puntos[jugador],'puntos', 'y el', jugador_otro,'tiene',puntos[jugador_otro]);
     } else if (puntos[jugador]===40){
@@ -39,12 +43,12 @@ function anadirPuntos(jugador){
         console.log('Volvemos a deuce');   
         }else {
             puntos[jugador]=50;
-            console.log('El jugador',jugador, 'ha ganado la partida');
+            console.log('El jugador',jugador, 'ha ganado la ronda');
         }   
     } else if (puntos[jugador]===45){
         puntos[jugador]=50;
-        console.log('El jugador',jugador, 'ha ganado la partida');
+        console.log('El jugador',jugador, 'ha ganado la ronda');
     }
 }
 
-anadirPuntos(jugador);
+//anadirPuntos(jugador);
