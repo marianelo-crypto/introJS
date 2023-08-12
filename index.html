@@ -11,17 +11,27 @@
 
     <!-- Llamar a las funciones después de que estén definidas -->
     <script>
-        //createMatch("Alberto", "María");
-        //pointWonBy(1);//15
-        //pointWonBy(2);//15
-        //pointWonBy(1);//30
-        //pointWonBy(2);//30
-        //pointWonBy(1);//40 deuce
-        //pointWonBy(2);//40 deuce
-        //pointWonBy(1);//45 deuce
-        //pointWonBy(2);//45 deuce
-        //pointWonBy(2);//ventaja
-        //pointWonBy(2);//50 gana
+        const game = jugador.createMatch("Alberto", "María");
+        game.pointWonBy(1);//15
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore();        
+        game.pointWonBy(1);//30
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);//40
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//40 deuce
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);//45 deuce
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//45 deuce
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//ventaja
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//50 gana
+        game.getCurrentRoundScore();
 
         //pointWonBy(2);//15 
         //pointWonBy(2);//30 
