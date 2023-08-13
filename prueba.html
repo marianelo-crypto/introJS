@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <!-- Enlazar el archivo "funciones.js" -->
+    <script src="Winblecode.js"></script>
+
+    <!-- Llamar a las funciones después de que estén definidas -->
+    <script>
+        const game = jugador.createMatch("Alberto", "María");
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);//15
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);//30
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);//40
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);//40 deuce
+        game.getCurrentRoundScore();
+        game.pointWonBy(1);// Ventaja Alberto
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);// Deuce
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);// Ventaja María
+        game.getCurrentRoundScore();
+        game.pointWonBy(2);// gana María
+        game.getCurrentRoundScore();
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);// gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);// gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+        game.getGameScore();
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);// gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1;
+        jugador.gamer[2].juegos+=1;
+        jugador.gamer[1].rondas=0;
+        jugador.gamer[2].rondas=0;
+        game.getMatchScore();
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);// gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+        game.getGameScore();
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//50 gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+        game.getGameScore();
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+        game.getGameScore();
+
+        game.pointWonBy(2);//15
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//30
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//40
+        game.getCurrentRoundScore()
+        game.pointWonBy(2);//gana
+        game.getCurrentRoundScore()
+
+        jugador.gamer[1].puntos=0;
+        jugador.gamer[2].puntos=0;
+        jugador.gamer[2].rondas+=1
+        jugador.gamer[2].juegos+=1;
+
+        game.getGameScore();
+        game.getMatchScore();
+    </script>
+</body>
+
+</html>

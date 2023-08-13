@@ -8,11 +8,15 @@ const jugador = {
       puntos: 0, // Puntos del jugador 0
       juegos: 0,
       rondas:0,
+      
     },
     {
       nombre: "", // Nombre del jugador 1
       numero: 1, // Número del jugador 1
       puntos: 0, // Puntos del jugador 1
+      juegos: 0,
+      rondas:0,
+      
     },
     {
       nombre: "", // Nombre del jugador 2
@@ -20,6 +24,7 @@ const jugador = {
       puntos: 0, // Puntos del jugador 2
       juegos: 0,
       rondas:0,
+   
     },
   ],
 
@@ -45,11 +50,9 @@ const jugador = {
 
           break;
         case 30:
-          if (self.gamer[jugador_otro].puntos === 40) {
-            self.gamer[jugadorNum].puntos = 40; // Puntuación de 40
-          } else {
-            self.gamer[jugadorNum].puntos = 40; // Puntuación de 40 (repetida)
-          }
+          
+          self.gamer[jugadorNum].puntos = 40; // Puntuación de 40
+          
           break;
         case 40:
           if (self.gamer[jugador_otro].puntos === 40) {
@@ -59,7 +62,6 @@ const jugador = {
           } else {
             self.gamer[jugadorNum].puntos = "Gana";
           }
-
           break;
         case 45:
           self.gamer[jugadorNum].puntos = "Gana"; // Jugador gana el juego
@@ -69,11 +71,19 @@ const jugador = {
     }
 
     function getCurrentRoundScore() {
-      if (self.gamer[1].puntos === 40 && self.gamer[2].puntos === 40) {
+      if(self.gamer[1].puntos ==="Gana"){
+        console.log(self.gamer[1].nombre +" ganó la ronda");
+      } else
+      if(self.gamer[2].puntos ==="Gana"){
+        console.log(self.gamer[2].nombre +" ganó la ronda");
+      }else
+      if(self.gamer[1].puntos === 40 && self.gamer[2].puntos === 40) {
         console.log("Deuce"); // Puntuación en empate (Deuce)
-      } else if (self.gamer[1].puntos === 45) {
+      }else
+      if (self.gamer[1].puntos === 45) {
         console.log("Advantage " + self.gamer[1].nombre); // Ventaja para jugador 1
-      } else if (self.gamer[2].puntos === 45) {
+      } else
+      if (self.gamer[2].puntos === 45) {
         console.log("Advantage " + self.gamer[2].nombre); // Ventaja para jugador 2
       } else {
         console.log(
@@ -88,15 +98,28 @@ const jugador = {
       }
     }
     function getMatchScore() {
-      
+      console.log(self.gamer[1].nombre, self.gamer[1].juegos +" _ "+ self.gamer[2].juegos, self.gamer[2].nombre)
+    }
 
-      
+    function getGameScore(){
+      console.log(self.gamer[1].nombre, self.gamer[1].rondas +" _ "+ self.gamer[2].rondas, self.gamer[2].nombre)
+    }
+
+    function getWinner(){
+      if(self.gamer[1].juegos===2){
+        console.log(self.gamer[1].nombre + " ha ganado el partido")
+      }
+      if(self.gamer[2].juegos===2){
+        console.log(self.gamer[2].nombre + " ha ganado el partido")
+      }
     }
 
     return {
       pointWonBy: pointWonBy, // Devolver la función para asignar puntos
       getCurrentRoundScore: getCurrentRoundScore, // Devolver la función para obtener la puntuación actual
       getMatchScore: getMatchScore,
+      getGameScore : getGameScore,
+      getWinner: getWinner,
     };
   },
 };
