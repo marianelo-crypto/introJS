@@ -1,77 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS</title>
 </head>
+
 <body>
     <!-- Enlazar el archivo "funciones.js" -->
     <script src="Winblecode.js"></script>
 
     <!-- Llamar a las funciones después de que estén definidas -->
     <script>
+
         const game = jugador.createMatch("Alberto", "María");
-        game.pointWonBy(1);//15
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//15
-        game.getCurrentRoundScore();        
-        game.pointWonBy(1);//30
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//30
-        game.getCurrentRoundScore();
-        game.pointWonBy(1);//40
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//40 deuce
-        game.getCurrentRoundScore();
-        game.pointWonBy(1);//45 deuce
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//45 deuce
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//ventaja
-        game.getCurrentRoundScore();
-        game.pointWonBy(2);//50 gana
-        game.getCurrentRoundScore();
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        let rondas = false;
+        let jugador_bis = 0;
+        let jugador_otro_bis = 0;
+        jugador.gamer[1].juegos = 0;
+        jugador.gamer[2].juegos = 0;
+        while (rondas === false) {
+            jugador.gamer[1].puntos = 0;
+            jugador.gamer[2].puntos = 0;
+            let juego = false;
+            while (juego === false) {
+                let jugador1 = Math.floor(Math.random() * 2) + 1;
+                game.pointWonBy(jugador1);
+                game.getCurrentRoundScore();
+
+                if (jugador.gamer[1].puntos === "Gana") {
+                    jugador_bis = 1;
+                    jugador_otro_bis = 2;
+                    juego = true;
+                }
+
+                if (jugador.gamer[2].puntos === "Gana") {
+                    jugador_bis = 2;
+                    jugador_otro_bis = 1;
+                    juego = true;
+                }
+            }
+            jugador.gamer[jugador_bis].juegos += 1;
+            
+
+
+            if (
+                jugador.gamer[jugador_bis].juegos === 4 &&
+                jugador.gamer[jugador_otro_bis].juegos <= 2
+            ) {
+                console.log(jugador.gamer[jugador_bis].nombre, " gana la ronda");
+                rondas = true;
+            } else if (
+                jugador.gamer[jugador_bis].juegos === 5 &&
+                jugador.gamer[jugador_otro_bis].juegos <= 3
+            ) {
+                console.log(
+                    jugador.gamer[jugador_bis].nombre,
+                    " gana la ronda"
+                );
+                rondas = true;
+            } else if (
+                jugador.gamer[jugador_bis].juegos === 6 &&
+                jugador.gamer[jugador_otro_bis].juegos <= 4
+            ) {
+                console.log(
+                    jugador.gamer[jugador_bis].nombre,
+                    " gana la ronda"
+                );
+                rondas = true;
+            } else if (jugador.gamer[jugador_bis].juegos === 7) {
+                console.log(
+                    jugador.gamer[jugador_bis].nombre,
+                    "gana la ronda"
+                );
+                rondas = true;
+            }
+        }
+        //game.getMatchScore()
+
+        //game.pointWonBy(1);//15
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//15
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(1);//30
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//30
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(1);//40
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//40 deuce
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(1);//45 deuce
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//45 deuce
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//ventaja
+        //game.getCurrentRoundScore();
+        //game.pointWonBy(2);//50 gana
+        //game.getCurrentRoundScore();
+
+        //game.pointWonBy(2);//15
+        //game.pointWonBy(2);//30
+        //game.pointWonBy(2);//40
+        //game.pointWonBy(2);//50 gana
+
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
-        //pointWonBy(2);//50 gana
-
-        //pointWonBy(2);//15 
-        //pointWonBy(2);//30 
-        //pointWonBy(2);//40 
+        //pointWonBy(2);//15
+        //pointWonBy(2);//30
+        //pointWonBy(2);//40
         //pointWonBy(2);//50 gana
 
         //console.log(getCurrentRoundScore());
         //console.log(getGameScore());
         //console.log(getMatchScore())
-        
+
     </script>
 </body>
+
 </html>
