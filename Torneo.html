@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <!-- Enlazar el archivo "funciones.js" -->
+    <script src="Winblecode.js"></script>
+
+    <!-- Llamar a las funciones después de que estén definidas -->
+    <script>
+
+jugadores = ["", "Alberto", "María", "Juanma", "Gaby"]
+
+jugadorfinal1=jugarTorneo(jugadores[1], jugadores[2]);
+jugadorfinal2=jugarTorneo(jugadores[3], jugadores[4]);
+winner=jugarTorneo(jugadorfinal1, jugadorfinal2);
+
+function jugarTorneo(jugador1,jugador2){
+        const game = jugador.createMatch(jugador1, jugador2);
+        let jugador_bis = 0;
+        let jugador_otro_bis = 0;
+        jugador.gamer[1].juegos = 0;
+        jugador.gamer[2].juegos = 0;
+        partido = false;
+
+        while (partido === false) {
+
+            jugador.gamer[1].rondas = 0;
+            jugador.gamer[2].rondas = 0;
+            let juegos = false;
+
+            while (juegos === false) {
+
+                jugador.gamer[1].puntos = 0;
+                jugador.gamer[2].puntos = 0;
+                let ronda = false;
+
+                while (ronda === false) {
+
+                    let jugador1 = Math.floor(Math.random() * 2) + 1;
+                    game.pointWonBy(jugador1);
+                    game.getCurrentRoundScore();
+
+                    if (jugador.gamer[1].puntos === "Gana") {
+                        jugador_bis = 1;
+                        jugador_otro_bis = 2;
+                        ronda = true;
+                    }
+
+                    if (jugador.gamer[2].puntos === "Gana") {
+                        jugador_bis = 2;
+                        jugador_otro_bis = 1;
+                        ronda = true;
+                    }
+                }
+
+                jugador.gamer[jugador_bis].rondas += 1;
+                game.getGameScore();
+                if (
+                    jugador.gamer[jugador_bis].rondas === 4 &&
+                    jugador.gamer[jugador_otro_bis].rondas <= 2
+                ) {
+                    //console.log(jugador.gamer[jugador_bis].nombre, "gana el juego");
+                    jugador.gamer[jugador_bis].juegos += 1;
+                    game.getMatchScore();
+                    juegos = true;
+                } else if (
+                    jugador.gamer[jugador_bis].rondas === 5 &&
+                    jugador.gamer[jugador_otro_bis].rondas <= 3
+                ) {
+                    //console.log(jugador.gamer[jugador_bis].nombre, "gana el juego");
+                    jugador.gamer[jugador_bis].juegos += 1;
+                    game.getMatchScore();
+                    juegos = true;
+                } else if (
+                    jugador.gamer[jugador_bis].rondas === 6 &&
+                    jugador.gamer[jugador_otro_bis].rondas <= 4
+                ) {
+                    //console.log(jugador.gamer[jugador_bis].nombre,"gana el juego");
+                    jugador.gamer[jugador_bis].juegos += 1;
+                    game.getMatchScore();
+                    juegos = true;
+                } else if (jugador.gamer[jugador_bis].rondas === 7) {
+                    //console.log(jugador.gamer[jugador_bis].nombre,"gana el juego");
+                    jugador.gamer[jugador_bis].juegos += 1;
+                    game.getMatchScore();
+                    juegos = true;
+                }
+            }
+
+            game.getWinner();
+            if (jugador.gamer[1].juegos === 2) {
+                partido = true;
+                return jugador.gamer[1].nombre;
+            }
+            if (jugador.gamer[2].juegos === 2) {
+                partido = true;
+                return jugador.gamer[2].nombre;
+            }
+        }
+        }
+    console.log(winner+" ha ganado el torneo");    
+</script>
+</body>
+
+</html>

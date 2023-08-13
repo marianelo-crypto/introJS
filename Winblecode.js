@@ -3,27 +3,29 @@ const jugador = {
   // Creamos el array de objetos gamer
   gamer: [
     {
-      nombre: "", // Nombre del jugador 0
-      numero: 0, // Número del jugador 0
-      puntos: 0, // Puntos del jugador 0
+      nombre: "", 
+      numero: 0, 
+      puntos: 0, 
       juegos: 0,
       rondas:0,
+      partidos:0,
       
     },
     {
-      nombre: "", // Nombre del jugador 1
-      numero: 1, // Número del jugador 1
-      puntos: 0, // Puntos del jugador 1
+      nombre: "", 
+      numero: 1, 
+      puntos: 0, 
       juegos: 0,
       rondas:0,
-      
+      partidos:0,
     },
     {
-      nombre: "", // Nombre del jugador 2
-      numero: 2, // Número del jugador 2
-      puntos: 0, // Puntos del jugador 2
+      nombre: "", 
+      numero: 2, 
+      puntos: 0, 
       juegos: 0,
       rondas:0,
+      partidos:0,
    
     },
   ],
@@ -114,12 +116,14 @@ const jugador = {
         console.log(self.gamer[2].nombre + " ha ganado el partido")
       }
     }
+    
     return {
       pointWonBy: pointWonBy, 
       getCurrentRoundScore: getCurrentRoundScore, 
       getMatchScore: getMatchScore,
       getGameScore : getGameScore,
       getWinner: getWinner,
+
     };
   },
 };
