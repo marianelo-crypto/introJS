@@ -36,7 +36,7 @@ const jugador = {
    
 
     const self = this; // Guardar la referencia a "this"
-
+    // Función para asignar puntos
     function pointWonBy(jugadorNum) {
       let jugador_otro = jugadorNum === 1 ? 2 : 1; // Obtener el número del otro jugador
 
@@ -69,7 +69,7 @@ const jugador = {
           break;
       }
     }
-
+    // Función para obtener la puntuación actual
     function getCurrentRoundScore() {
       if(self.gamer[1].puntos ==="Gana"){
         console.log(self.gamer[1].nombre +" ganó la ronda");
@@ -97,14 +97,15 @@ const jugador = {
         ); // Mostrar puntuación normal
       }
     }
+    // Función para obtener el marcador del partido
     function getMatchScore() {
       console.log(self.gamer[1].nombre, self.gamer[1].juegos +" _ "+ self.gamer[2].juegos, self.gamer[2].nombre)
     }
-
+    // Función para obtener el marcador del juego
     function getGameScore(){
       console.log(self.gamer[1].nombre, self.gamer[1].rondas +" _ "+ self.gamer[2].rondas, self.gamer[2].nombre)
     }
-
+    // Función para obtener al ganador del partido
     function getWinner(){
       if(self.gamer[1].juegos===2){
         console.log(self.gamer[1].nombre + " ha ganado el partido")
@@ -113,10 +114,9 @@ const jugador = {
         console.log(self.gamer[2].nombre + " ha ganado el partido")
       }
     }
-
     return {
-      pointWonBy: pointWonBy, // Devolver la función para asignar puntos
-      getCurrentRoundScore: getCurrentRoundScore, // Devolver la función para obtener la puntuación actual
+      pointWonBy: pointWonBy, 
+      getCurrentRoundScore: getCurrentRoundScore, 
       getMatchScore: getMatchScore,
       getGameScore : getGameScore,
       getWinner: getWinner,
