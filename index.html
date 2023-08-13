@@ -16,16 +16,16 @@
 
         const game = jugador.createMatch("Alberto", "María");
 
-        let rondas = false;
+        let juegos = false;
         let jugador_bis = 0;
         let jugador_otro_bis = 0;
-        jugador.gamer[1].juegos = 0;
-        jugador.gamer[2].juegos = 0;
-        while (rondas === false) {
+        jugador.gamer[1].rondas = 0;
+        jugador.gamer[2].rondas = 0;
+        while (juegos === false) {
             jugador.gamer[1].puntos = 0;
             jugador.gamer[2].puntos = 0;
-            let juego = false;
-            while (juego === false) {
+            let ronda = false;
+            while (ronda === false) {
                 let jugador1 = Math.floor(Math.random() * 2) + 1;
                 game.pointWonBy(jugador1);
                 game.getCurrentRoundScore();
@@ -33,49 +33,49 @@
                 if (jugador.gamer[1].puntos === "Gana") {
                     jugador_bis = 1;
                     jugador_otro_bis = 2;
-                    juego = true;
+                    ronda = true;
                 }
 
                 if (jugador.gamer[2].puntos === "Gana") {
                     jugador_bis = 2;
                     jugador_otro_bis = 1;
-                    juego = true;
+                    ronda = true;
                 }
             }
-            jugador.gamer[jugador_bis].juegos += 1;
+            jugador.gamer[jugador_bis].rondas += 1;
             
 
 
             if (
-                jugador.gamer[jugador_bis].juegos === 4 &&
-                jugador.gamer[jugador_otro_bis].juegos <= 2
+                jugador.gamer[jugador_bis].rondas === 4 &&
+                jugador.gamer[jugador_otro_bis].rondas <= 2
             ) {
                 console.log(jugador.gamer[jugador_bis].nombre, " gana la ronda");
-                rondas = true;
+                juegos = true;
             } else if (
-                jugador.gamer[jugador_bis].juegos === 5 &&
-                jugador.gamer[jugador_otro_bis].juegos <= 3
+                jugador.gamer[jugador_bis].rondas === 5 &&
+                jugador.gamer[jugador_otro_bis].rondas <= 3
             ) {
                 console.log(
                     jugador.gamer[jugador_bis].nombre,
                     " gana la ronda"
                 );
-                rondas = true;
+                juegos = true;
             } else if (
-                jugador.gamer[jugador_bis].juegos === 6 &&
-                jugador.gamer[jugador_otro_bis].juegos <= 4
+                jugador.gamer[jugador_bis].rondas === 6 &&
+                jugador.gamer[jugador_otro_bis].rondas <= 4
             ) {
                 console.log(
                     jugador.gamer[jugador_bis].nombre,
                     " gana la ronda"
                 );
-                rondas = true;
-            } else if (jugador.gamer[jugador_bis].juegos === 7) {
+                juegos = true;
+            } else if (jugador.gamer[jugador_bis].rondas === 7) {
                 console.log(
                     jugador.gamer[jugador_bis].nombre,
                     "gana la ronda"
                 );
-                rondas = true;
+                juegos = true;
             }
         }
         //game.getMatchScore()
