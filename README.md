@@ -26,7 +26,7 @@ Para ganar un juego, el jugador tiene que cumplir estos requisitos:
 ¿Como se gana una ronda? 
 
 El sistema de puntuación es el siguiente:
-- Cada jugador puede tener alguno de estos puntos en un juego: 0, 15, 30, 40. Cada vez que un jugador se lleva un punto, la puntuación aumenta en este orden: 0 -> 15 -> 30 -> 40 -> Ganas*.
+- Cada jugador puede tener alguno de estos puntos en un juego: 0, 15, 30, 40. Cada vez que un jugador se lleva un punto, la puntuación aumenta en este orden: 0 -> 15 -> 30 -> 40 -> Ganas.
 - Si tienes 40 y ganas la siguiente tirada, ganas la ronda, pero hay reglas especiales:
   
             - Si ambos tienen 40 puntos, los jugadores están en "deuce" (empate).
@@ -43,9 +43,9 @@ Funcionalidades:
 
 El programa ofrece las siguientes funcionalidades:
 
-pointWonBy(jugadorNum): Asigna un punto al jugador especificado (1 o 2).
-getCurrentRoundScore(): Muestra la puntuación actual de la ronda.
-getMatchScore(): Muestra el marcador general del partido.
-getGameScore(): Muestra el marcador del juego actual.
-getWinner(): Muestra al ganador del partido, si lo hay.
-jugarPartido(jugador1,jugador2) que retorna el ganador del partido.
+- pointWonBy(jugadorNum): Asigna un punto al jugador especificado (1 o 2).
+- getCurrentRoundScore(): Muestra la puntuación actual de la ronda.
+- getMatchScore(): Muestra el marcador general del partido.
+- getGameScore(): Muestra el marcador del juego actual.
+- getWinner(): Muestra al ganador del partido, si lo hay.
+- jugarPartido(jugador1,jugador2) que retorna el ganador del partido.
