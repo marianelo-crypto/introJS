@@ -16,11 +16,11 @@
 
 jugadores = ["", "Alberto", "María", "Juanma", "Gaby"]
 
-jugadorfinal1=jugarTorneo(jugadores[1], jugadores[2]);
-jugadorfinal2=jugarTorneo(jugadores[3], jugadores[4]);
-winner=jugarTorneo(jugadorfinal1, jugadorfinal2);
+jugadorfinal1=jugarPartido(jugadores[1], jugadores[2]);
+jugadorfinal2=jugarPartido(jugadores[3], jugadores[4]);
+winner=jugarPartido(jugadorfinal1, jugadorfinal2);
 
-function jugarTorneo(jugador1,jugador2){
+function jugarPartido(jugador1,jugador2){
         const game = jugador.createMatch(jugador1, jugador2);
         let jugador_bis = 0;
         let jugador_otro_bis = 0;
